@@ -5,8 +5,24 @@ OPERATORS = ['+', '-', '*', '/', ' ']
 //Display methods
 
 //Getting table and start event listening
+
+
+toggle = document.querySelector('.auto-clear');
+
+toggle.addEventListener('change', (event)=>{
+    console.log(toggle)
+    if (toggle.checked){
+        toggle.removeAttribute('checked')
+    }else{
+        toggle.setAttribute('checked', true)
+    }
+})
+
 table = document.getElementById('main-table')
 let parenthesisBalance = 0
+let history_elements = 0
+let result_state = false
+
 table.onclick = function(event){
     //dynamic variables(changed by every event)
     let dataLen = document.getElementById('main-field').value.length
@@ -16,18 +32,33 @@ table.onclick = function(event){
     //handling edditing buttons: clear, back, uquals
     if (target.id == 'clear'){
         clearText();
+        result_state = false
     }else if (target.id == 'back'){
         backText();
+        result_state = false
     }else if (target.id == 'equals'){
         if (parenthesisBalance == 0){
             data = document.getElementById('main-field').value;
-            document.getElementById('main-field').value = result(data)
+            final_result = result(data)
+            document.getElementById('main-field').value = final_result
+            historyHandler(data, final_result)
+            if (toggle.checked){
+                result_state = true
+            }
         }   
     }
-    else if (dataLen <=40){
+    else if (dataLen <=50){
     //handling '(' and ')' signs
+        
+
         if (target.innerText == '('){
-            if (NUMBERS.includes(last_item) ||
+
+            if (result_state){
+                clearText()
+                document.getElementById('main-field').value +=target.textContent;
+                parenthesisBalance += 1
+            }
+            else if (NUMBERS.includes(last_item) ||
                 last_item == ')'    
             ){
                 event.preventDefault()
@@ -66,10 +97,14 @@ table.onclick = function(event){
                 document.getElementById('main-field').value +=(' ' + target.textContent + ' ');
             }//numbers handler
             else if(last_item != ')'){
+                if (result_state){
+                    clearText()}
                 document.getElementById('main-field').value +=target.textContent;
             }
         }
+        result_state = false
     }
+    
 }
 
 //base buttons functions
@@ -229,3 +264,27 @@ function additionSubstractionHandler(data){
     }
 }
 
+//history handler
+function addNewHistory(expression, result){
+    console.log(result.toString().length)
+    if (result.toString().length >= 11){
+        result ='= ' + result.toString().slice(0, 8) + '...'
+        console.log(result)
+    }
+    if (expression.toString().length >= 20){
+        expression =expression.toString().slice(0, 20) + '...'
+        console.log(expression)
+    }
+    document.getElementById('history-item-3').innerHTML = `<td  class='history-item-exp'><a href='' id="expression-str">${expression}</a></td>
+                                                                      <td  class='history-item-result'><a href='' id='result-str'>${result}</a></td>`
+}
+function movingUp(){
+    document.getElementById('history-item-1').innerHTML = document.getElementById('history-item-2').innerHTML
+    document.getElementById('history-item-2').innerHTML = document.getElementById('history-item-3').innerHTML
+}
+function historyHandler(expression, result){
+    movingUp()
+    addNewHistory(expression, result)
+}
+
+//history links handlers

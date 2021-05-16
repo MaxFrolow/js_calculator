@@ -1,6 +1,6 @@
 .calculator{
     width: 400px;
-    height: 670px;
+    height: 700px;
     margin:auto;
     border: 1px solid rgb(192, 192, 192);
     border-radius: 20px;
@@ -10,7 +10,7 @@
 }
 .input-field {
     width:380px;
-    height:200px;
+    height:190px;
     margin:auto
 }
 .buttons-field{
@@ -40,8 +40,8 @@
 }
 .history-field{
     width: 355px;
-    height: 120px;
-    margin-left: 12px;
+    height: 100px;
+    margin-left: 10px;
     margin-top: 10px;
     padding: 3px;
     border: 1px solid rgb(218, 218, 218);
@@ -53,6 +53,7 @@ tr{
     height:20px;
 }
 .history-item a{
+    font: 1em "Fira Sans", sans-serif;
     text-decoration: none;
     color: black;
 }
@@ -66,6 +67,7 @@ tr{
     width: 110px;
     height: 10px;
     text-align: right;
+    padding-right: 3px;
 }
 .main-field{
     width: 345px;
@@ -74,8 +76,8 @@ tr{
     border: 1px solid rgb(192, 192, 192);
     border-radius: 5px;
     background-color: rgb(253, 229, 212);
-    margin-left: 12px;
-    margin-top: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
 }
 .main-field:focus{
     border: 2px solid black;
@@ -90,3 +92,72 @@ td{
     margin-left: 9px;
     margin-top: 6px;
 }
+.buttons-space{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-left: 20px;
+    width: 355px;
+    height:40px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+  }
+  
+  .switch input {display:none;}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(185, 158, 136);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #1fa197;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .button-label{
+      font: 1em "Fira Sans", sans-serif;
+      color: rgb(77, 77, 77);
+      margin-top: 10px;
+      margin-left: 5px;
+      width:100px;
+      position: absolute;
+      display: inline-block;
+  }

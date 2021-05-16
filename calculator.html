@@ -11,21 +11,30 @@
             
             <div class="input-field">
                 <table class="history-field">
-                <tr class="history-item" id='history-tem-1'>
-                    <td  class='history-item-exp'><a href=''></a><br></td>
-                    <td  class='history-item-result'><a href=''></a></td>
+                <tr class="history-item" id='history-item-1'>
+                    <td  class='history-item-exp'><a href='' id="expression-str"></a></td>
+                    <td  class='history-item-result'><a href='' id='result-str'></a></td>
                 </tr>
-                <tr class="history-item" id='history-tem-2'>
-                    <td  class='history-item-exp'><a href=''></a><br></td>
-                    <td  class='history-item-result'><a href=''></a></td>
+                <tr class="history-item" id='history-item-2'>
+                    <td  class='history-item-exp'><a href='' id="expression-str"></a></td>
+                    <td  class='history-item-result'><a href='' id='result-str'></a></td>
                 </tr>
-                <tr class="history-item" id='history-tem-3'>
-                    <td  class='history-item-exp'><a href=''></a><br></td>
-                    <td  class='history-item-result'><a href=''></a></td>
+                <tr class="history-item" id='history-item-3'>
+                    <td  class='history-item-exp'><a href='' id="expression-str"></a></td>
+                    <td  class='history-item-result'><a href='' id='result-str'></a></td>
                 </tr>
                 </table>
                 <input type="text" value="" id="main-field" class="main-field" disabled="true"></input>
+                        
             </div>
+            <div class='buttons-space'>
+                <label class="switch">
+                    <input type="checkbox" class='auto-clear' checked>
+                    <span class="slider round"></span>
+                </label>    
+                <p class='button-label'>Auto-clear</p>
+            </div>
+
             <div class="buttons-field">
                 <table id="main-table">
                     <tr>
@@ -81,7 +90,9 @@ Elements
 9 / (89 - (100 / 2) + 48 + (54 - (46 - 2) / 2))
 /-->
         <script src="calculator.js"></script>
-
+        <script type='text/javascript'>
+           // addNewHistory('12345+5', '1235')
+        </script>
 
 
 
