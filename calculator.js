@@ -262,13 +262,19 @@ function additionSubstractionHandler(data){
 //history handler
 function addNewHistory(expression, result){
     if (result.toString().length >= 11){
-        result ='= ' + result.toString().slice(0, 8) + '...'
+        short_result = + result.toString().slice(0, 8) + '...'
+    }else{
+        short_result = result
     }
     if (expression.toString().length >= 20){
-        expression =expression.toString().slice(0, 20) + '...'
+        short_expression = expression.toString().slice(0, 20) + '...'
+    }else{
+        console.log(expression)
+        short_expression = expression.toString()
+        console.log(short_expression)
     }
-    document.getElementById('history-item-3').innerHTML = `<td class='history-item-exp'><a href='#' onclick="getHistory(event)" id="expression-str">${expression}</a></td>
-                                                                      <td class='history-item-result'><a href='#' onclick="getHistory(event)" id='result-str'>${result}</a></td>`
+    document.getElementById('history-item-3').innerHTML = `<td class='history-item-exp'><a href='#' onclick="getHistory(event, '${expression}')" id="expression-str">${short_expression}</a></td>
+                                                                      <td class='history-item-result'><a href='#' onclick="getHistory(event, ${result})" id='result-str'>= ${short_result}</a></td>`
 }
 function movingUp(){
     document.getElementById('history-item-1').innerHTML = document.getElementById('history-item-2').innerHTML
@@ -280,8 +286,9 @@ function historyHandler(expression, result){
 }
 
 //history links handlers
-function getHistory(event){
+function getHistory(event, data){
+    console.log(data.toString())
     event.preventDefault()
-    document.getElementById('main-field').value = event.target.textContent
+    document.getElementById('main-field').value = data
     result_state = false
 }
