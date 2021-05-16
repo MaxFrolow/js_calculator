@@ -10,15 +10,16 @@
         <div class="calculator">
             
             <div class="input-field">
-                <input type="text" value="123" id="main-field" class="main-field" disabled="true"></input>
+                <input type="text" class="history-field" disabled="true" value='test text'></input>
+                <input type="text" value="" id="main-field" class="main-field" disabled="true"></input>
             </div>
             <div class="buttons-field">
                 <table id="main-table">
                     <tr>
                         <td><button class="bttn bttn-numberic" id="back">&#x2190;</button></td>
                         <td><button class="bttn bttn-numberic" id="clear">C</button></td>
-                        <td><button class="bttn bttn-numberic">(</button></td>
-                        <td><button class="bttn bttn-numberic" id="multiple">)</button></td>
+                        <td><button class="bttn bttn-numberic" id='Right Parenthesis' >(</button></td>
+                        <td><button class="bttn bttn-numberic" id="Right Parenthesis" >)</button></td>
                     </tr>
                     <tr>
                         <td><button class="bttn bttn-numberic">7</button></td>
@@ -41,7 +42,7 @@
                     <tr>
                         <td><button class="bttn bttn-numberic">0</button></td>
                         <td><button class="bttn bttn-numberic">.</button></td>
-                        <td><button class="bttn bttn-numberic" id="equals">=</button></td>
+                        <td><button class="bttn bttn-numberic bttn-equals" id="equals">=</button></td>
                         <td><button class="bttn bttn-numberic">+</button></td>
                     </tr>
                 </table>
@@ -63,12 +64,12 @@ Elements
 <input type="text" class="main-field"></input>
 
 
-
-
-
-
-
-
+<!---Tests
+/-->
         <script src="calculator.js"></script>
+
+
+
+
     </body>
 <html>

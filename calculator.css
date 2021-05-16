@@ -1,6 +1,6 @@
 .calculator{
     width: 400px;
-    height: 570px;
+    height: 670px;
     margin:auto;
     border: 1px solid rgb(192, 192, 192);
     border-radius: 20px;
@@ -8,9 +8,9 @@
     background-color: #b6cece;
     padding: 10px;
 }
-.input-field{
+.input-field {
     width:380px;
-    height:100px;
+    height:200px;
     margin:auto
 }
 .buttons-field{
@@ -32,11 +32,20 @@
     background-color: #203647;
     color: cornsilk;
 }
-.bttn-equal{
+.bttn-equals{
     background-color: rgb(180, 69, 50);
 }
-.bttn-equal:hover{
+.bttn-equals:hover{
     background-color: rgb(209, 90, 69);
+}
+.history-field{
+    width: 350px;
+    height: 100px;
+    margin-left: 12px;
+    margin-top: 10px;
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
+    background-color: rgb(252, 245, 239);
 }
 .main-field{
     width: 350px;
@@ -45,8 +54,7 @@
     border-radius: 5px;
     background-color: rgb(253, 229, 212);
     margin-left: 12px;
-    margin-top: 30px;
-
+    margin-top: 20px;
 }
 .main-field:focus{
     border: 2px solid black;
