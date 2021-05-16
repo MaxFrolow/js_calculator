@@ -39,17 +39,38 @@
     background-color: rgb(209, 90, 69);
 }
 .history-field{
-    width: 350px;
-    height: 100px;
+    width: 355px;
+    height: 120px;
     margin-left: 12px;
     margin-top: 10px;
+    padding: 3px;
     border: 1px solid rgb(218, 218, 218);
     border-radius: 5px;
     background-color: rgb(252, 245, 239);
 }
+tr{
+    width:320px;
+    height:20px;
+}
+.history-item a{
+    text-decoration: none;
+    color: black;
+}
+.history-item-exp{
+    width: 200px;
+    height: 10px;
+}
+.history-item-result{
+    text-decoration: none;
+    color: black;
+    width: 110px;
+    height: 10px;
+    text-align: right;
+}
 .main-field{
-    width: 350px;
+    width: 345px;
     height: 40px;
+    padding: 5px;
     border: 1px solid rgb(192, 192, 192);
     border-radius: 5px;
     background-color: rgb(253, 229, 212);

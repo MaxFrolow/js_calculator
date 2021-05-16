@@ -7,8 +7,6 @@ OPERATORS = ['+', '-', '*', '/', ' ']
 //Getting table and start event listening
 table = document.getElementById('main-table')
 let parenthesisBalance = 0
-let familys = []
-let opennedPar = []
 table.onclick = function(event){
     //dynamic variables(changed by every event)
     let dataLen = document.getElementById('main-field').value.length
@@ -26,48 +24,50 @@ table.onclick = function(event){
             document.getElementById('main-field').value = result(data)
         }   
     }
+    else if (dataLen <=40){
     //handling '(' and ')' signs
-    else if (target.innerText == '('){
-        if (NUMBERS.includes(last_item) ||
-            last_item == ')'    
-        ){
-            event.preventDefault()
-        }else{
-            parenthesisBalance += 1
-            document.getElementById('main-field').value +=target.textContent;
-        }
-    }else if (target.innerText == ')'){
-        if (OPERATORS.includes(last_item) ||
-            last_item == '('    
-        ){
-            event.preventDefault()
-        }else if (parenthesisBalance > 0){
-            document.getElementById('main-field').value +=target.textContent;
-            parenthesisBalance -= 1
+        if (target.innerText == '('){
+            if (NUMBERS.includes(last_item) ||
+                last_item == ')'    
+            ){
+                event.preventDefault()
+            }else{
+                parenthesisBalance += 1
+                document.getElementById('main-field').value +=target.textContent;
+            }
+        }else if (target.innerText == ')'){
+            if (OPERATORS.includes(last_item) ||
+                last_item == '('    
+            ){
+                event.preventDefault()
+            }else if (parenthesisBalance > 0){
+                document.getElementById('main-field').value +=target.textContent;
+                parenthesisBalance -= 1
 
 
+            }
         }
-    }
-    
-    //other buttons handlers
-    else if (target.className.search('bttn') != -1){
-        //operators handler
-        if(OPERATORS.includes(target.innerText) && (document.getElementById('main-field').value == '')){
-            clearText()
-        }
-        else if (OPERATORS.includes(target.innerText) &&
-            OPERATORS.includes(last_item) &&
+        
+        //other buttons handlers
+        else if (target.className.search('bttn') != -1){
+            //operators handler
+            if(OPERATORS.includes(target.innerText) && (document.getElementById('main-field').value == '')){
+                clearText()
+            }
+            else if (OPERATORS.includes(target.innerText) &&
+                OPERATORS.includes(last_item) &&
+                (document.getElementById('main-field').value != '')
+                ){
+                backText()
+                document.getElementById('main-field').value +=(' ' + target.textContent + ' ');
+            }else if(OPERATORS.includes(target.innerText) &&
             (document.getElementById('main-field').value != '')
             ){
-            backText()
-            document.getElementById('main-field').value +=(' ' + target.textContent + ' ');
-        }else if(OPERATORS.includes(target.innerText) &&
-        (document.getElementById('main-field').value != '')
-        ){
-            document.getElementById('main-field').value +=(' ' + target.textContent + ' ');
-        }//numbers handler
-        else if(last_item != ')'){
-            document.getElementById('main-field').value +=target.textContent;
+                document.getElementById('main-field').value +=(' ' + target.textContent + ' ');
+            }//numbers handler
+            else if(last_item != ')'){
+                document.getElementById('main-field').value +=target.textContent;
+            }
         }
     }
 }
@@ -122,10 +122,6 @@ function format_string(data){
     }
 }
 
-function stringAnalytics(data){
-
-}
-
 function collectSign(sign, data){
     targetArray = []
     new_data = data.slice()
@@ -157,6 +153,7 @@ function collectBaseFamily(data){
             }
         }
         
+    }
 }
 
 
@@ -231,3 +228,4 @@ function additionSubstractionHandler(data){
         substractionOperation(data)
     }
 }
+
