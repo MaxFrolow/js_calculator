@@ -4,13 +4,8 @@ OPERATORS = ['+', '-', '*', '/', ' ']
 
 //Display methods
 
-//Getting table and start event listening
-
-
-toggle = document.querySelector('.auto-clear');
-
+toggle = document.querySelector('.auto-clear')
 toggle.addEventListener('change', (event)=>{
-    console.log(toggle)
     if (toggle.checked){
         toggle.removeAttribute('checked')
     }else{
@@ -266,17 +261,14 @@ function additionSubstractionHandler(data){
 
 //history handler
 function addNewHistory(expression, result){
-    console.log(result.toString().length)
     if (result.toString().length >= 11){
         result ='= ' + result.toString().slice(0, 8) + '...'
-        console.log(result)
     }
     if (expression.toString().length >= 20){
         expression =expression.toString().slice(0, 20) + '...'
-        console.log(expression)
     }
-    document.getElementById('history-item-3').innerHTML = `<td  class='history-item-exp'><a href='' id="expression-str">${expression}</a></td>
-                                                                      <td  class='history-item-result'><a href='' id='result-str'>${result}</a></td>`
+    document.getElementById('history-item-3').innerHTML = `<td class='history-item-exp'><a href='#' onclick="getHistory(event)" id="expression-str">${expression}</a></td>
+                                                                      <td class='history-item-result'><a href='#' onclick="getHistory(event)" id='result-str'>${result}</a></td>`
 }
 function movingUp(){
     document.getElementById('history-item-1').innerHTML = document.getElementById('history-item-2').innerHTML
@@ -288,3 +280,8 @@ function historyHandler(expression, result){
 }
 
 //history links handlers
+function getHistory(event){
+    event.preventDefault()
+    document.getElementById('main-field').value = event.target.textContent
+    result_state = false
+}
