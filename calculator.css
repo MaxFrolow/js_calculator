@@ -1,5 +1,5 @@
 .calculator{
-    width: 400px;
+    width: 450px;
     height: 700px;
     margin:auto;
     border: 1px solid rgb(192, 192, 192);
@@ -14,7 +14,7 @@
     margin:auto
 }
 .buttons-field{
-    width:380px;
+    width:400px;
     height:380px;
     margin: auto;
 }
@@ -39,9 +39,8 @@
     background-color: rgb(209, 90, 69);
 }
 .history-field{
-    width: 355px;
+    width: 370px;
     height: 100px;
-    margin-left: 10px;
     margin-top: 10px;
     padding: 3px;
     border: 1px solid rgb(218, 218, 218);
@@ -70,20 +69,17 @@ tr{
     padding-right: 3px;
 }
 .main-field{
-    width: 345px;
+    width: 360px;
     height: 40px;
     padding: 5px;
     border: 1px solid rgb(192, 192, 192);
     border-radius: 5px;
     background-color: rgb(253, 229, 212);
-    margin-left: 10px;
     margin-top: 15px;
 }
-.main-field:focus{
-    border: 2px solid black;
 }
 table{
-    width:100%;
+    width: 400px;
 
 }
 td{
@@ -95,7 +91,7 @@ td{
 .buttons-space{
     padding-top: 3px;
     padding-bottom: 3px;
-    margin-left: 20px;
+    margin-left: 30px;
     width: 355px;
     height:40px;
 }
