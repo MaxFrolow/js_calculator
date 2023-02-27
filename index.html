@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="htdocs/calculator.css">
+    </head>
+
+
+    <body>
+        <div class="calculator">
+            
+            <div class="input-field">
+                <table class="history-field" id="history-field">
+                <tr class="history-item" id='history-item-1'>
+                    <td  class='history-item-exp'><a href='' id="expression-str"></a></td>
+                    <td  class='history-item-result'><a href='' id='result-str'></a></td>
+                </tr>
+                <tr class="history-item" id='history-item-2'>
+                    <td  class='history-item-exp'><a href='' id="expression-str"></a></td>
+                    <td  class='history-item-result'><a href='' id='result-str'></a></td>
+                </tr>
+                <tr class="history-item" id='history-item-3'>
+                    <td  class='history-item-exp'><a href='' id="expression-str"></a></td>
+                    <td  class='history-item-result'><a href='' id='result-str'></a></td>
+                </tr>
+                </table>
+                <input type="text" value="" id="main-field" class="main-field" disabled="true"></input>
+                        
+            </div>
+            <div class='buttons-space'>
+                <label class="switch">
+                    <input type="checkbox" class='auto-clear' checked>
+                    <span class="slider round"></span>
+                </label>    
+                <p class='button-label'>Auto-clear</p>
+            </div>
+
+            <div class="buttons-field">
+                <table id="main-table">
+                    <tr>
+                        <td><button class="bttn bttn-numberic" id="back">&#x2190;</button></td>
+                        <td><button class="bttn bttn-numberic" id="clear">C</button></td>
+                        <td><button class="bttn bttn-numberic" id='Right Parenthesis' >(</button></td>
+                        <td><button class="bttn bttn-numberic" id="Right Parenthesis" >)</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bttn bttn-numberic">7</button></td>
+                        <td><button class="bttn bttn-numberic">8</button></td>
+                        <td><button class="bttn bttn-numberic">9</button></td>
+                        <td><button class="bttn bttn-numberic">/</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bttn bttn-numberic">4</button></td>
+                        <td><button class="bttn bttn-numberic">5</button></td>
+                        <td><button class="bttn bttn-numberic">6</button></td>
+                        <td><button class="bttn bttn-numberic">*</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bttn bttn-numberic">1</button></td>
+                        <td><button class="bttn bttn-numberic">2</button></td>
+                        <td><button class="bttn bttn-numberic">3</button></td>
+                        <td><button class="bttn bttn-numberic">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="bttn bttn-numberic">0</button></td>
+                        <td><button class="bttn bttn-numberic">.</button></td>
+                        <td><button class="bttn bttn-numberic bttn-equals" id="equals">=</button></td>
+                        <td><button class="bttn bttn-numberic">+</button></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+
+
+
+
+<!--- 
+Elements
+/-->
+<button class="bttn bttn-numberic">1</button>
+
+
+<input type="text" class="main-field"></input>
+
+
+<!---Tests
+9 / (89 - (100 / 2) + 48 + (54 - (46 - 2) / 2))
+/-->
+        <script src="htdocs/calculator.js"></script>
+        <script type='text/javascript'>
+           // addNewHistory('12345+5', '1235')
+        </script>
+
+
+
+    </body>
+<html>
